@@ -1,0 +1,10 @@
+.app {
+  width: 100%;
+  height: 100%;
+  background-color: #f6f6ef;
+  color: #ff6600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Rubik';
+}

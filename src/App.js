@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { useSelector } from 'react-redux';
+
+import SearchBox from './components/SearchBox';
+import ResultsList from './components/ResultsList';
+import Spinner from './components/Spinner'
+import styles from './App.module.css';
 
 function App() {
+  const loadingQuery = useSelector(state=>state.loadingQuery)
+
+  let results = null;
+  if(loadingQuery) {
+    results = <Spinner />
+  }
+  else if(loadingQuery !== null) {
+    results = <ResultsList />
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.app}>
+      <h1 className={styles.header}>Hacker News Search</h1>
+      <SearchBox />
+      {results}
     </div>
   );
 }
