@@ -19,6 +19,7 @@ function App() {
   return (
     <div className={styles.app}>
       <h1 className={styles.header}>Hacker News Search</h1>
+      <div className={styles.link}><a href="https://www.github.com/flankstaek/RTS-Labs-Exercise/">View on Github</a></div>
       <SearchBox />
       {results}
     </div>
