@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import SearchBox from './components/SearchBox';
 import ResultsList from './components/ResultsList';
 import Spinner from './components/Spinner'
+import PageChanger from './components/PageChanger';
 import styles from './App.module.css';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <div className={styles.link}><a href="https://www.github.com/flankstaek/RTS-Labs-Exercise/">View on Github</a></div>
       <SearchBox />
       {results}
+      { loadingQuery === null ? null : <PageChanger /> }
     </div>
   );
 }
